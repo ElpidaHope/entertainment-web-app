@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import style from '../styles/components/Collection.module.scss';
 import Card from './Card';
 
