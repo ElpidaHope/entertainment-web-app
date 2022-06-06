@@ -1,0 +1,157 @@
+@use '../util/functions' as f;
+@use '../util/colors' as c; 
+@use '../util/breakpoints' as b;
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .poster {
+    width: 183px;
+    height: 277px;
+    position: relative;
+    margin-inline: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+
+  .details {
+    padding: f.rem(30) 0;
+    h1 {
+      font-weight: 300;
+    }
+
+    >p {
+      color: c.$gray;
+      font-size: f.rem(14);
+      padding: f.rem(5) 0;
+    }
+
+    .rating {
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        font-size: f.rem(36);
+        font-weight: 400;
+        margin-bottom: f.rem(8);
+      }
+    }
+
+    .moreDetails {
+      display: flex;
+      justify-content: space-between;
+      margin: f.rem(10) 0;
+
+      div p:first-child {
+        color: c.$gray;
+        font-weight: 500;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: f.rem(5);
+      }
+    }
+
+    .genres {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: f.rem(10);
+      >p {
+        font-weight: 700;
+        font-size: f.rem(20);
+      }
+
+      .eachGenre {
+        display: flex;
+        align-items: center;
+        gap: f.rem(8);
+        flex-wrap: wrap;
+
+        p {
+          background-color: c.$white;
+          color: c.$dark-blue;
+          padding: f.rem(1) f.rem(8);
+          border-radius: f.rem(5);
+          font-size: f.rem(12);
+        }
+      }
+    }
+
+    article {
+      text-align: left;
+      margin-top: f.rem(20);
+      p:first-child {
+        font-weight: 700;
+      }
+
+      p:nth-child(2) {
+        line-height: 1.5;
+        padding: f.rem(10) 0;
+      }
+    }
+
+    .casts {
+      padding: f.rem(10) 0;
+      text-align: left;
+
+      >p:first-child {
+        font-weight: 500;
+        margin-bottom: f.rem(10);
+      }
+
+      .allCast {
+        display: flex;
+        flex-wrap: wrap;
+        gap: f.rem(8);
+
+        p {
+          padding: f.rem(1) f.rem(8);
+          border: 1px solid c.$white;
+          border-radius: f.rem(10);
+          font-size: f.rem(14);
+        }
+      }
+    }
+
+    .website {
+      margin: f.rem(20) 0;
+      display: flex;
+      justify-content: center;
+      gap: f.rem(20);
+      button {
+        display: flex;
+        align-items: center;
+        gap: f.rem(10);
+        padding: f.rem(10);
+        border-radius: f.rem(10);
+        border: none;
+        background-color: c.$grayish-blue;
+        color: c.$white;
+      }
+    }
+  }
+
+  @include b.breakpoint-up(medium) {
+    flex-direction: row;
+    padding-top: f.rem(100);
+    gap: f.rem(20);
+
+    .poster {
+      flex: 40%;
+      width: 100%;
+      height: f.rem(450)
+    }
+
+    .details {
+      flex: 60%;
+      text-align: left;
+    }
+  }
+  
+}

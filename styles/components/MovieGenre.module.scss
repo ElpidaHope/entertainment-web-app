@@ -1,0 +1,39 @@
+@use '../util/functions' as f;
+@use '../util/colors' as c;
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: f.rem(10) 0;
+
+  div {
+    height: f.rem(176);
+    width: f.rem(176);
+    border-radius: f.rem(10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: f.rem(32);
+    text-align: center;
+    margin: f.rem(8);
+    cursor: pointer;
+  }
+
+  div:nth-child(even) {
+    background-color: c.$bg;
+  }
+
+  div:nth-child(odd) {
+    background-color: c.$semi-dark-blue;
+  }
+
+  .tv:nth-child(odd) {
+    background-color: c.$green;
+  }
+
+  .tv:nth-child(even) {
+    background-color: c.$semi-dark-blue;
+  }
+}

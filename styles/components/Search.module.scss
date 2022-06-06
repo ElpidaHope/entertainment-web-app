@@ -1,0 +1,44 @@
+@use '../util/colors' as c;
+@use '../util/functions' as f;
+@use '../util/breakpoints' as b;
+
+.search {
+  background-color: c.$dark-blue;
+  padding: f.rem(50) 0;
+  display: flex;
+  align-items: center;
+  gap: f.rem(10);
+
+  input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    color: c.$white;
+    font-size: f.rem(24);
+    padding-bottom: f.rem(8);
+    &::placeholder {
+      color: c.$placeholder-color;
+      font-size: f.rem(24);
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid c.$grayish-blue;
+    }
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+    align-self: flex-start;
+  }
+
+  button {
+    border: none;
+    background-color: c.$grayish-blue;
+    margin-left: auto;
+    padding: f.rem(8) f.rem(12);
+    border-radius: f.rem(5);
+    color: c.$white;
+  }
+}

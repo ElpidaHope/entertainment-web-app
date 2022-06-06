@@ -1,0 +1,37 @@
+@use '../util/functions' as f;
+@use '../util/colors' as c;
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: f.rem(24);
+
+  .title {
+    display: flex;
+    align-items: flex-end;
+    gap: f.rem(20);
+
+    h1 {
+      font-weight: 400;
+    }
+
+    p {
+      padding: f.rem(2) f.rem(8);
+      border-radius: f.rem(5);
+      border: 1px solid c.$white;
+      font-size: f.rem(10);
+    }
+  }
+
+  .seeMore {
+    font-size: f.rem(12);
+    color: c.$grayish-blue;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

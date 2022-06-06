@@ -1,0 +1,6 @@
+@use '../util/functions' as f;
+
+.text {
+  margin-bottom: f.rem(50);
+  font-weight: 300;
+}

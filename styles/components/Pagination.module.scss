@@ -1,0 +1,59 @@
+@use '../util/colors' as c;
+@use '../util/functions' as f;
+@use '../util/breakpoints' as b;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: f.rem(60);
+
+  
+
+  a {
+    border: 1px solid c.$white;
+    color: c.$white;
+    display: flex;
+    align-items: center;
+    gap: f.rem(10);
+    padding: f.rem(10) f.rem(15);
+    font-weight: 500;
+    font-size: f.rem(20);
+
+    &:hover {
+      background-color: c.$white;
+      color: c.$dark-blue;
+    }
+  }
+  
+  p {
+    background-color: c.$white;
+    color: c.$dark-blue;
+    padding: f.rem(10) f.rem(15);
+    border: 1px solid c.$white;
+    font-size: f.rem(20);
+  }
+
+  @include b.breakpoint-down(medium) {
+    a, p {
+      padding: f.rem(5) f.rem(10);
+      font-size: f.rem(16);
+    }
+
+  }
+
+  a:first-child {
+    border-radius: f.rem(5) 0 0 f.rem(5);
+    border-right: 1px solid c.$gray;
+  }
+  
+  a:last-child {
+    border-radius: 0 f.rem(5) f.rem(5) 0;
+    border-left: 1px solid c.$gray;
+  }
+
+  .disable {
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
