@@ -7,7 +7,7 @@ import useSwr from "swr";
 
 
 const Collection = ({status, type, toLink, endpoint, limit}) => {
-  const url = `http://localhost:3000/${endpoint}`
+  const url = `/${endpoint}`
   const fetcher = url => fetch(url).then(res => res.json())
 
   const { data } = useSwr(url, fetcher)
